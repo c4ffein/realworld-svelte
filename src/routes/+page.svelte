@@ -1,6 +1,7 @@
 <script>
 	import { page } from '$app/stores';
 	import ArticleList from '$lib/ArticleList/index.svelte';
+	import logo from '$lib/assets/conduit-logo.svg';
 	import Pagination from './Pagination.svelte';
 
 	const { data } = $props();
@@ -19,7 +20,9 @@
 	{#if !data.user}
 		<div class="banner">
 			<div class="container">
-				<h1 class="logo-font">conduit</h1>
+				<h1 class="logo-font">
+					<img src={logo} alt="Conduit" class="banner-logo" />
+				</h1>
 				<p>A place to share your knowledge.</p>
 			</div>
 		</div>
