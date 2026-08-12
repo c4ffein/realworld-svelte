@@ -9,19 +9,41 @@
 		"build": "vite build",
 		"preview": "vite preview",
 		"lint": "prettier --check .",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"test": "vitest run",
+		"test:unit": "vitest",
+		"test:e2e": "playwright test --grep-invert @security",
+		"test:e2e:security": "playwright test --grep @security",
+		"test:e2e:ui": "playwright test --ui",
+		"test:e2e:report": "playwright show-report",
+		"test:e2e:disabled": "cat e2e/DISABLED_TESTS.md",
+		"test:api": "bash realworld/specs/api/run-api-tests-hurl.sh",
+		"test:api:bruno": "bash scripts/run-api-tests-bruno.sh",
+		"spec:bruno:check": "node realworld/specs/api/hurl-to-bruno.js --check",
+		"spec:update": "bash scripts/update-realworld-spec.sh",
+		"prepare": "husky"
+	},
+	"lint-staged": {
+		"*.{js,ts,svelte,html,css,json,md}": "prettier --write"
+	},
+	"engines": {
+		"node": ">=22"
 	},
 	"devDependencies": {
+		"@playwright/test": "^1.62.1",
 		"@sveltejs/adapter-vercel": "^6.3.2",
 		"@sveltejs/kit": "^2.52.2",
 		"@sveltejs/vite-plugin-svelte": "^6.2.1",
+		"husky": "^9.1.7",
+		"lint-staged": "^17.3.0",
 		"marked": "^16.4.1",
 		"prettier": "^3.6.2",
 		"prettier-plugin-svelte": "^3.4.0",
 		"sanitize-html": "^2.17.0",
 		"svelte": "^5.55.7",
 		"typescript": "^5.9.3",
-		"vite": "^7.3.2"
+		"vite": "^7.3.2",
+		"vitest": "^4.1.10"
 	},
 	"packageManager": "pnpm@10.20.0"
 }
