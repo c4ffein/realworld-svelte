@@ -2,3 +2,10 @@
 pnpm-lock.yaml
 package-lock.json
 yarn.lock
+
+# Vendored RealWorld spec — kept byte-identical to upstream
+realworld/
+
+# Playwright artifacts
+playwright-report/
+test-results/
