@@ -16,15 +16,9 @@
 		"test:e2e:security": "playwright test --grep @security",
 		"test:e2e:ui": "playwright test --ui",
 		"test:e2e:report": "playwright show-report",
-		"test:e2e:disabled": "cat e2e/DISABLED_TESTS.md",
-		"test:api": "bash realworld/specs/api/run-api-tests-hurl.sh",
-		"test:api:bruno": "bash scripts/run-api-tests-bruno.sh",
-		"spec:bruno:check": "node realworld/specs/api/hurl-to-bruno.js --check",
-		"spec:update": "bash scripts/update-realworld-spec.sh",
-		"prepare": "husky"
-	},
-	"lint-staged": {
-		"*.{js,ts,svelte,html,css,json,md}": "prettier --write"
+		"test:e2e:disabled": "cat realworld-e2e-tests/DISABLED_TESTS.md",
+		"spec:check": "bash scripts/check-realworld-spec.sh",
+		"spec:update": "bash scripts/update-realworld-spec.sh"
 	},
 	"engines": {
 		"node": ">=22"
@@ -34,8 +28,6 @@
 		"@sveltejs/adapter-vercel": "^6.3.2",
 		"@sveltejs/kit": "^2.52.2",
 		"@sveltejs/vite-plugin-svelte": "^6.2.1",
-		"husky": "^9.1.7",
-		"lint-staged": "^17.3.0",
 		"marked": "^16.4.1",
 		"prettier": "^3.6.2",
 		"prettier-plugin-svelte": "^3.4.0",

@@ -4,7 +4,8 @@ package-lock.json
 yarn.lock
 
 # Vendored RealWorld spec — kept byte-identical to upstream
-realworld/
+realworld-e2e-tests/
+static/conduit-theme.css
 
 # Playwright artifacts
 playwright-report/
